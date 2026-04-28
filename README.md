@@ -1,123 +1,113 @@
-# Project 03 — Python_Bootcamp
+# Project 03 — Python_Bootcamp  
 
-**Summary:**  
-In this project, you will learn how to create a web application in Python using Flask.
+Резюме: в этом проекте ты научишься создавать веб-приложение на языке **Python** с использованием Flask. 
 
-💡 [Click here](https://new.oprosso.net/p/4cb31ec3f47a4596bc758ea1861fb624) to share your feedback on this project. It’s anonymous and helps our team improve the learning experience. We recommend completing the survey right after finishing the project.
+💡 [Нажми сюда](https://new.oprosso.net/p/4cb31ec3f47a4596bc758ea1861fb624), **чтобы поделиться с нами обратной связью на этот проект**. Это анонимно и поможет нашей команде сделать обучение лучше. Рекомендуем заполнить опрос сразу после выполнения проекта.
 
-## Contents
-
-  - [Chapter I](#chapter-i)
-  - [Chapter II](#chapter-ii)
-    - [General Information](#general-information)
-    - [Topics to Study](#topics-to-study)
-  - [Chapter III](#chapter-iii)
-    - [Task 0. Project Setup](#task-0-project-setup)
-    - [Task 1. Creating the Project Structure](#task-1-creating-the-project-structure)
-    - [Task 2. Implementing the Domain Layer](#task-2-implementing-the-domain-layer)
-    - [Task 3. Implementing the Datasource Layer](#task-3-implementing-the-datasource-layer)
-    - [Task 4. Implementing the Web Layer](#task-4-implementing-the-web-layer)
-    - [Task 5. Implementing the DI Layer](#task-5-implementing-the-di-layer)
+## Содержание
+ 1. [Chapter I](#chapter-i)   
+     - [Инструкция](#инструкция)   
+ 2. [Chapter II](#chapter-ii)  
+     - [Общая информация](#общая-информация)  
+ 3. [Chapter III](#chapter-iii)      
+     - [Задание 0. Создание проекта](#задание-0-создание-проекта)  
+     - [Задание 1. Создание структуры проекта](#задание-1-cоздание-структуры-проекта)  
+     - [Задание 2. Реализация domain-слоя](#задание-2-реализация-domain-слоя)  
+     - [Задание 3. Реализация datasource-слоя](#задание-3-реализация-datasource-слоя)  
+     - [Задание 4. Реализация web-слоя](#задание-4-реализация-web-слоя)  
+     - [Задание 5. Реализация di-слоя](#задание-5-реализация-di-слоя) 
 
 
 ## Chapter I
+## Инструкция
 
-**Instructions**
-
-1. Throughout the course, you will often feel uncertain and have limited information, but that's all part of the experience. Remember, the repository and Google are always there for you. So are your peers and Rocket.Chat. Talk. Search. Use your common sense. Don't be afraid to make mistakes.
-2. Be mindful of your sources. Cross-check. Think critically. Analyze. Compare.
-3. Read the tasks carefully, and then read them again.
-4. Pay close attention to the examples, too. They may include information that is not explicitly stated in the task itself.
-5. You may encounter inconsistencies when something in the task or example contradicts what you thought you knew. Try to figure them out. If you can't, write it down as an open question and resolve it as you go. Don't leave questions unresolved.
-6. If a task seems unclear or impossible, it probably just feels that way. Break it down into parts. Most of them will make sense on their own.
-7. You’ll encounter all kinds of tasks. The bonus ones are for those who are curious and detail-oriented. They’re optional and more challenging, but completing them gives you extra experience and insight.
-8. Don't try to cheat the system or your peers. Ultimately, you'll only be cheating yourself.
-9. Got a question? Ask the peer to your right. If that doesn't help, ask the peer to your left.
-10. When asking for help, always make sure you understand the why, how, and what-for. Otherwise, the help won't be very useful.
-11. Always push your code to the develop branch only. The master branch will be ignored. Work inside the src directory.
-12. Your directory should not contain any files besides those required for the tasks.
+1. На протяжении всего курса тебя будет сопровождать чувство неопределенности и острого дефицита информации — это нормально. Не забывай, что информация в репозитории и Google всегда с тобой. Как и пиры, и Rocket.Chat. Общайся. Ищи. Опирайся на здравый смысл. Не бойся ошибиться.
+2. Будь внимателен к источникам информации. Проверяй. Думай. Анализируй. Сравнивай. 
+3. Внимательно читай задания. Перечитай несколько раз. 
+4. Читать примеры тоже лучше внимательно. В них может быть что-то, что не указано в явном виде в самом задании.
+5. Тебе могут встретиться несоответствия, когда что-то новое в условиях задачи или примере противоречит уже известному. Если встретилось такое — попробуй разобраться. Если не получилось — запиши вопрос в открытые вопросы и выясни в процессе работы. Не оставляй открытые вопросы неразрешенными. 
+6. Если задание кажется непонятным или невыполнимым — так только кажется. Попробуй его декомпозировать. Скорее всего, отдельные части станут понятными. 
+7. На пути тебе встретятся разные задания. Бонусные задания подходят для самых дотошных и пытливых. Эти задания с повышенной сложностью и необязательны к выполнению, но если ты их сделаешь, то получишь дополнительный опыт и знания.
+8. Не пытайся обмануть систему и окружающих. В первую очередь ты обманешь себя.
+9. Есть вопрос? Спроси соседа справа. Если это не помогло — соседа слева.
+10. Когда пользуешься помощью — всегда разбирайся до конца: почему, как и зачем. Иначе помощь не будет иметь смысла.
+11. Всегда делай push только в ветку develop! Ветка master будет проигнорирована. Работай в директории src.
+12. В твоей директории не должно быть иных файлов, кроме тех, что обозначены в заданиях.
 
 ## Chapter II
+## Общая информация
 
-### General Information
+**Веб-приложение** — это клиент-серверное приложение, в котором клиент взаимодействует с веб-сервером при помощи браузера. Логика веб-приложения распределена между сервером и клиентом, хранение данных осуществляется преимущественно на сервере, обмен информацией происходит по сети.
 
-A **web application** is a type of client-server application in which the client interacts with a web server via a browser. The logic of a web application is distributed between the server and the client. Data storage primarily occurs on the server, and information exchange takes place over the network.
+**Flask** — один из самых популярных фреймворков для создания веб-приложений на языке Python. Преимущества *Flask*:
 
-**Flask** is one of the most popular Python frameworks for creating web applications. Its advantages include:
+- Простота использования: Flask обладает простым и интуитивно понятным синтаксисом, что делает его идеальным для начинающих разработчиков или для тех, кто предпочитает простой и понятный код.
+- Хорошая документация: Flask имеет хорошо структурированную и понятную документацию, которая упрощает начало работы и решение возникающих проблем.
+- Гибкость: Flask предлагает гибкий и модульный подход к разработке веб-приложений, позволяя выбирать только необходимые компоненты и функциональности для проекта.
+- Поддержка RESTful API: Flask предоставляет удобные инструменты для разработки RESTful API, такие как маршрутизация, сериализация данных и обработка запросов и ответов.
+- Хорошая интеграция с другими инструментами: Flask легко интегрируется с другими популярными библиотеками и инструментами Python, такими как SQLAlchemy для работы с базами данных и Jinja2 для шаблонизации.
 
-- **Ease of use**: Flask has a simple and intuitive syntax, making it ideal for beginner developers or those who prefer clear, straightforward code.
-- **Good documentation**: Flask offers well-structured, clear documentation that simplifies getting started and troubleshooting.
-- **Flexibility**: Flask provides a flexible and modular approach to web development, allowing you to select the necessary components and features for your project.
-- **Support for RESTful APIs**: Flask provides convenient tools for developing RESTful APIs, including routing, data serialization, and request/response handling.
-- **Good integration with other tools**: Flask easily integrates with popular Python libraries and tools, such as SQLAlchemy for database work and Jinja2 for templating.
+Эти преимущества делают Flask привлекательным выбором для разработчиков, желающих создавать быстрые, масштабируемые и легко поддерживаемые веб-приложения на языке Python.
 
-These advantages make Flask an attractive choice for developers aiming to build fast, scalable, and maintainable web applications in Python.
-
-### Topics to Study
-
-- Web application,
-- Flask for the backend,
-- API,
-- Minimax algorithm,
+### Темы для изучения:
+- веб-приложение;
+- Flask для серверной части;
+- API;
+- алгоритм «Минимакс»;
 - MVC.
 
 ## Chapter III
+### Проект: Крестики-Нолики
 
-## Project: Tic-Tac-Toe
-The project is created once and used for all subsequent tasks.
+Проект создается один раз и используется для всех последующих заданий.
 
-### Task 0. Project Setup
+## Задание 0. Создание проекта
+Для разработки на языке Python тебе нужно будет установить соответствующий интерпретатор.
+Его можно скачать с официального сайта. После ты сможешь использовать командную строку и/или различные интегрированные среды разработки (IDE) для работы над проектами.
 
-In order to develop in Python, you will need to install the appropriate interpreter. It can be downloaded from the official website. Once installed, you can use the command line and/or various integrated development environments (IDEs) to work on projects.  
+Проект в данном случае — набор файлов с расширением .py, которые содержат код на языке Python, запускаются командой `python filename.py` (или `python3`) по отдельности либо импортируются в какой-то общий файл, который часто называют `main.py`.
 
-In this context, a project is a set of .py files containing Python code that can be run individually via the command `python filename.py` (or `python3`) or imported into a file commonly named `main.py`.  
+В PyCharm процесс создания проекта достаточно прост: нужно лишь выбрать интерпретатор Python, который будет использоваться, а также путь для сохранения и название проекта. Возможно также создание виртуального окружения, которое обычно удобно использовать для больших проектов с множеством различных зависимостей (библиотек, фреймворков).
 
-In PyCharm, creating a project is straightforward. You just select the Python interpreter to use and specify the save path and project name. You can also create a virtual environment, which is useful for large projects with many dependencies, such as libraries and frameworks.
+## Задание 1. Создание структуры проекта
+- Каждый слой является отдельным модулем.
+- Структура проекта должна иметь следующие слои: web, domain, datasource, di.
+- Слой web должен включать в себя как минимум пакеты model, module, route, mapper для взаимодействия с клиентом.
+- Слой domain должен включать в себя как минимум пакеты model, service для реализации бизнес-логики приложения.
+- Слой datasource должен включать в себя как минимум пакеты model, repository, mapper для реализации работы с данными (например, с базой данных).
+- В слое di описываются конфигурации для внедрения зависимостей.
 
-### Task 1. Creating the Project Structure
+## Задание 2. Реализация domain-слоя
+- Опиши модель игрового поля в виде целочисленной матрицы.
+- Опиши модель текущей игры, у которой есть UUID и игровое поле.
+- Опиши интерфейс сервиса, у которого есть следующие методы:
+    - метод получения следующего хода текущей игры алгоритмом Минимакс;
+    - метод валидации игрового поля текущей игры (проверь, что не изменены предыдущие ходы);
+    - метод проверки окончания игры.
+- Модели, интерфейсы, реализации должны находиться в разных файлах.
 
-- Each layer should be a separate module.
-- The project structure must include the following layers: **web**, **domain**, **datasource**, and **di**.
-- The **web** layer must contain the following packages for client interaction: model, module, route, and mapper.
-- The **domain** layer must include the model and service packages to implement business logic.
-- The **datasource** layer must include the model, repository, and mapper packages for data handling (e.g., database operations).
-- The **di** layer contains configurations for dependency injection.
+## Задание 3. Реализация datasource-слоя
+- Реализуй класс-хранилище для хранения текущих игр.
+- В качестве средства хранения используй потокобезопасные коллекции.
+- Опиши модели игрового поля, текущей игры.
+- Реализуй мапперы domain<->datasource.
+- Реализуй репозиторий для работы с классом-хранилищем, у которого есть следующие методы:
+    - метод сохранения текущей игры;
+    - метод получения текущей игры.
+- Создай класс, реализующий интерфейс сервиса и принимающий в качестве параметра репозиторий для работы с классом-хранилищем.
+- Модели, интерфейсы, реализации должны находиться в разных файлах.
 
-### Task 2. Implementing the Domain Layer
+## Задание 4. Реализация web-слоя
+- Опиши модели игрового поля, текущей игры.
+- Реализуй мапперы domain<->web.
+- Реализуй контроллер с использованием Flask, имеющий метод POST /game/{UUID текущей игры}, который отправляет текущую игру с обновленным игровым полем пользователем и получает в ответ текущую игру с обновленным игровым полем компьютером.
+- Если отправлена некорректная текущая игра с обновленным полем, должна вернуться ошибка с описанием.
+- Должна быть поддержка нескольких игр одновременно.
+- Модели, интерфейсы, реализации должны находиться в разных файлах.
 
-- Define the game board model as an integer matrix.
-- Define the current game model, which includes a UUID and the game board.
-- Define a service interface with the following methods:
-  - A method to determine the next move in the current game using the Minimax algorithm.
-  - A method to validate the current game board (checking that previous moves have not been altered).
-  - A method to check if the game has ended.
-- Place models, interfaces, and implementations in separate files.
-
-### Task 3. Implementing the Datasource Layer
-
-- Implement a storage class for current games.
-- Use thread-safe collections for storage.
-- Define models for the game board and the current game.
-- Implement mappers between the domain and data source models (domain<->datasource).
-- Implement a repository to work with the storage class that includes the following methods:
-  - A method to save the current game.
-  - A method to retrieve the current game.
-- Create a class that implements the service interface and accepts the repository as a parameter to work with the storage class.
-- Place models, interfaces, and implementations in separate files.
-
-### Task 4. Implementing the Web Layer
-
-- Define models for the game board and the current game.
-- Implement mappers between the domain and web models (domain<->web).
-- Implement a Flask controller with a POST method, /game/{current_game_UUID}, that accepts a current game with a user-updated game board and returns a current game with a computer-updated game board.
-- If an invalid game with an updated board is sent, return an error with a description.
-- Support multiple games running simultaneously.
-- Models, interfaces, and implementations should be in separate files.
-
-### Task 5. Implementing the DI Layer
-
-- Implement a Container class that defines the dependency graph.
-- It must include at least:
-  - A singleton storage class.
-  - A repository for working with the storage class.
-  - A service for working with the repository.
+## Задание 5. Реализация di-слоя
+- Реализуй класс Container, в котором описывается граф зависимостей.
+- Он должен содержать как минимум: 
+   - класс-хранилище в качестве singleton;
+   - репозиторий для работы с классом-хранилищем;
+   - сервис для работы с репозиторием.
