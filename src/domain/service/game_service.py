@@ -2,8 +2,8 @@
 
 from abc import ABC, abstractmethod
 
-from domain.domain.board import Board
-from domain.domain.game import Game
+from domain.model.board import Board
+from domain.model.game import Game
 
 
 class GameService(ABC):
